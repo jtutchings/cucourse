@@ -1,0 +1,176 @@
+@charset "utf-8";
+/* CSS Document */
+
+.cucourseNewsContainer{
+    display: inline; /* IE < 8: fake inline-block */
+    width: 100%;
+    float:left;
+    height: 150px;
+}
+.cucourseNewsItemsTOC {
+    width:auto;
+    /*  display: inline-block;
+    margin-left:10px;*/
+    float:left;
+    /*visibility: hidden; */
+    text-align: left;
+    overflow:auto;
+    height: 150px;
+/*  position:absolute; */
+/*  clear: both;*/
+}
+
+.cucourseCourseLink{
+    border:thin  #FFFF00;
+    font-size:large;
+}
+.cucourseNewsHeadline {
+    font-size: large;
+    font-weight: bold;
+    display: block;
+}
+.cucourseNewsContent{
+    width:97%;
+    float:left;
+    margin-left:0px;
+    margin-top:0px;
+    /*  clear: both;*/
+
+    /*position: relative;*/
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.cucourseNewsItems {
+
+    height: 150px;
+    /**display: inline;  IE < 8: fake inline-block */
+    width:100%;
+    margin-top:0px;
+    text-align: left;
+    margin-left:5px;
+    cursor: pointer;
+    list-style-type: none;
+    overflow:auto;
+    float: left;
+    /*clear: both;
+    background-position: top;
+    top: auto;*/
+}
+
+.cucourseNewsItem{
+    width: 100%;
+}
+.cucourseNewsTOCTrigger{
+    height: auto;
+    display:block;
+
+    /*display: inline; /* IE < 8: fake inline-block */
+    width: 3%;
+    /*background-color:#990000;*/
+    font-size: large;
+    font-weight: bold;
+    cursor:pointer;
+    float: left;
+
+}
+
+.cucourseNewsPanel{
+    height: 150px;
+    /**display: inline;  IE < 8: fake inline-block */
+    width:auto;
+    margin-top:0px;
+    text-align: left;
+    margin-left:5px;
+    cursor: pointer;
+    list-style-type: none;
+    overflow:auto;
+    float: left;
+}
+.cucourseNewsReadMore{
+    background-image: url([[pix:block_cucourse|readmore]]);
+
+    background-repeat: no-repeat;
+    height: 93px;
+    width: 334px;
+    z-index: 99;
+    float: right;
+}
+.cucourseUniverseCourseBlock{
+
+    width: 100%;
+    float:left;
+    overflow:auto;
+}
+
+.cucourseLayout{
+    height: auto;
+
+}
+.cucourseModuleList{
+    display:inline-block;
+    float:left;
+    vertical-align:top;
+    width:100%;
+}
+
+.cucourseUniverseCourseBlockHolder{
+    float: left;
+    width: 100%;
+}
+
+.cucourseNewsAuthor{
+    margin: 2px;
+}
+.cucourseNewsCourseShortname{
+    font-weight: bold;
+    margin: 2px;
+}
+.cucourseNewsDate{
+    font-weight: bold;
+    margin: 2px;
+    float: right;
+}
+
+.cucourseNewsMessage{
+    display:inline-block;
+    float:left;
+    clear: both;
+    width: inherit;
+    height: inherit;
+}
+
+.cucourseTutorHeading{
+    font-size: large;
+    font-weight: bold;
+    display: inline;
+}
+
+
+
+.cucourseAssignmentModuleName{
+    font-size:medium;
+    font-weight: bold;
+}
+.cucourseAssignmentBlock{
+
+}
+
+.cucourseAssignmentBlock .name{
+    /* font-size: large; */
+
+}
+
+.cucourseTopText{
+    float: left;
+    width: 100%;
+}
+.cucourseBottomText{
+    float: left;
+    width: 100%;
+}
+
+.cucourseTabTopText{
+
+}
