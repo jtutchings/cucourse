@@ -29,12 +29,10 @@ $capabilities = array(
             'editingteacher' => CAP_ALLOW,
             'manager' => CAP_ALLOW
             ),
-
     ),
 
     'block/cucourse:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
-
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => array(
@@ -44,7 +42,7 @@ $capabilities = array(
 
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
     ),
-    
+
     'block/cucourse:myaddinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
 

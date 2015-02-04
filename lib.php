@@ -505,12 +505,14 @@ function cucourse_get_tutors($courses, $unicourses, $modules) {
     } else {
         list($usql, $params) = $DB->get_in_or_equal($userids, SQL_PARAMS_NAMED);
 
-
         $params['fieldid'] = $officehoursfield;
-        $sql = "SELECT u.id, u.email, " . get_all_user_name_fields(true, 'u'). ", ud.data AS officehours, " .  user_picture::fields('u', array('id'))
-                  ." FROM {user} u
-                  LEFT JOIN {user_info_data} ud ON ud.userid = u.id AND ud.fieldid = :fieldid
-                 WHERE u.id $usql";
+        $sql = "SELECT u.id, u.email, " . get_all_user_name_fields(true, 'u').
+                    ", ud.data AS officehours, " .
+                    user_picture::fields('u', array('id'))
+                    . " FROM {user} u
+                    LEFT JOIN {user_info_data} ud ON ud.userid = u.id
+                    AND ud.fieldid = :fieldid
+                    WHERE u.id $usql";
         $users = $DB->get_records_sql($sql, $params);
 
         foreach ($users as $user) {
@@ -554,7 +556,7 @@ function cucourse_get_tutors($courses, $unicourses, $modules) {
 
             $data = array();
             foreach (array_keys($currenttutors) as $tutorid) {
-                if(isset($tutorseen[$tutorid])){
+                if (isset($tutorseen[$tutorid])) {
                     continue;
                 }
                 if (isset($tutors[$tutorid])) {
@@ -568,13 +570,13 @@ function cucourse_get_tutors($courses, $unicourses, $modules) {
         if ($tutors) {
             $data = array();
             foreach (array_keys($tutors) as $tutorid) {
-                if(isset($tutorseen[$tutorid])){
+                if (isset($tutorseen[$tutorid])) {
                     continue;
                 }
                 if (isset($tutors[$tutorid])) {
                     $data[] = cucourse_format_tutor_details($tutors[$tutorid]);
                 }
-                
+
             }
             $returnstring .= cucourse_format_tutor_table($data, get_string('previoustutors', 'block_cucourse'));
         }

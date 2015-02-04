@@ -52,23 +52,23 @@ class block_cucourse extends block_base {
             $this->content = '';
             return $this->content;
         }
-        
+
         $displayblock = true;
-        if(isset($CFG->cucourse_roles_not_to_show_block)){
+        if (isset($CFG->cucourse_roles_not_to_show_block)) {
 
             $roleid = -1;
             $allroles = get_all_roles(context_system::instance());
 
-            foreach($allroles as $role){
-                if($role->shortname == $CFG->cucourse_roles_not_to_show_block){
+            foreach ($allroles as $role) {
+                if ($role->shortname == $CFG->cucourse_roles_not_to_show_block) {
                     $roleid = $role->id;
                 }
             }
-            if(user_has_role_assignment($USER->id, $roleid)  ){
+            if (user_has_role_assignment($USER->id, $roleid)  ) {
                 $displayblock = false;
             }
         }
-        if($displayblock){
+        if ($displayblock) {
             // Get the news forum player and set the rotation time.
             $PAGE->requires->js('/blocks/cucourse/jquery.min.js');
             $PAGE->requires->js('/blocks/cucourse/jquery-te-1.4.0.min.js');
@@ -142,7 +142,7 @@ class block_cucourse extends block_base {
             $newsblock->headlines = array();
             $newsblock->newsitems = array();
             $isteacher = false;
-             
+
             foreach ($allcourses as $course) {
 
                 $coursecontext = context_course::instance( $course->id);
@@ -189,23 +189,22 @@ class block_cucourse extends block_base {
             }
 
             $this->content->text .= '<!-- END OF CUCOURSE CONTENT -->';
-            }else{
+        } else {
                 $this->content->text .= html_writer::tag('div',
                                                 $CFG->cucourse_no_block_top_text,
                                                 array('class' => 'cucourseBottomText'));
-                $search    = optional_param('search', '', PARAM_RAW);  // search words
-                $search = trim(strip_tags($search)); // trim & clean raw searched string
+                $search = optional_param('search', '', PARAM_RAW);  // Search words
+                $search = trim(strip_tags($search)); // Trim & clean raw searched string.
                 $courserenderer = $PAGE->get_renderer('core', 'course');
                 $searchform = $courserenderer->course_search_form($search, 'navbar');
-                //$PAGE->set_button($searchform);
+
                 $this->content->text .= $searchform;
-                $this->content->text .= html_writer::link(new moodle_url('/course/index.php'), 
+                $this->content->text .= html_writer::link(new moodle_url('/course/index.php'),
                                                             get_string('linktocategories', 'block_cucourse'));
                 $this->content->text .= html_writer::tag('div', $CFG->cucourse_no_block_footer_text,
                                                             array('class' => 'cucourseBottomText'));
-                
-            }
+
+        }
         return $this->content;
     }
-
 }
